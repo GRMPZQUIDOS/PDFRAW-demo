@@ -588,7 +588,7 @@
 
     var data;
     try {
-      var resp = await fetch(ngrokUrl + '/analyser', { method: 'POST', body: form });
+      var resp = await fetch(ngrokUrl + '/analyser', { method: 'POST', body: form, headers: {'ngrok-skip-browser-warning': '1'} });
       if (!resp.ok) throw new Error('Erreur serveur : ' + resp.status);
       data = await resp.json();
     } catch(e) {
