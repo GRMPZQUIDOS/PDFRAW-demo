@@ -424,11 +424,7 @@
 
 <div class="demo-section">
 
-  <div class="endpoint-row">
-    <span class="endpoint-label">Colab Endpoint</span>
-    <div class="endpoint-dot" id="endpoint-dot"></div>
-    <input type="text" id="ngrokUrl" value="https://VOTRE-URL.ngrok-free.app" spellcheck="false" oninput="checkEndpoint()">
-  </div>
+  <input type="hidden" id="ngrokUrl" value="https://ultrared-yoshie-prodissolution.ngrok-free.dev">
 
   <div id="dropzone" onclick="document.getElementById('fileInput').click()">
     <input type="file" id="fileInput" accept=".pdf">
@@ -556,10 +552,6 @@
     if (!selectedFile) return;
 
     var ngrokUrl = document.getElementById('ngrokUrl').value.trim().replace(/\/$/, '');
-    if (!ngrokUrl || ngrokUrl.indexOf('VOTRE-URL') !== -1) {
-      setStatus("Renseignez l'URL ngrok du notebook Colab.", 'err');
-      return;
-    }
 
     var btn = document.getElementById('process-btn');
     btn.disabled = true;
